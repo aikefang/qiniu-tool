@@ -1,4 +1,8 @@
 # 七牛云工具-封装版
+## 安装
+```javascript
+npm install qiniu-tool --save
+```
 ## 使用方法
 ### 上传资源
 ```javascript
@@ -37,7 +41,7 @@ qiniuTool.refresh([
 ```
 
 
-## 版本 v1.0.0 参数详解
+## 版本 v1.0.* 参数详解
 #### `ak {String} `
 ```
 必填
