@@ -1,0 +1,18 @@
+{
+  "_from": "sy-fe-mock",
+  "_id": "sy-fe-mock@1.0.0",
+  "name": "qiniu-tool",
+  "version": "1.0.0",
+  "description": "七牛工具Npm封装版",
+  "main": "index.js",
+  "author": {
+    "name": "kyle",
+    "email": "zhaokai.zhuang@gmail.com",
+    "url": "https://www.webascii.cn"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "qiniu": "^7.2.1"
+  },
+  "devDependencies": {}
+}
