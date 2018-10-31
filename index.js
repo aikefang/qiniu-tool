@@ -5,7 +5,6 @@ let refreshFn = require('./refresh/index')
 
 class QiniuTool {
   async config(option) {
-    console.log(2222)
     qiniuTool.option = option
   }
 
