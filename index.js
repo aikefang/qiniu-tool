@@ -1,9 +1,11 @@
 let getFileList = require('./get-files-list/index')
 let uploadFn = require('./upload/index')
+let uploadOnlyFn = require('./upload-only/index')
 let refreshFn = require('./refresh/index')
 
 class QiniuTool {
   async config(option) {
+    console.log(2222)
     qiniuTool.option = option
   }
 
@@ -12,6 +14,11 @@ class QiniuTool {
     await uploadFn.config(qiniuTool.option)
     let fileList = await getFileList.eachFiles()
     await uploadFn.continuityUpload(fileList)
+  }
+
+  async uploadOnly() {
+    await uploadOnlyFn.config(qiniuTool.option)
+    return await uploadOnlyFn.upload()
   }
 
   async refresh(list) {
@@ -27,6 +34,10 @@ class QiniuTool {
       console.log(`[CDN] refreshed [${res.taskIds[item]}] ${item}`)
     }
     console.log(`[CDN refresh End] 刷新成功 共${i}个文件刷新成功`)
+  }
+
+  async uploadOnly() {
+
   }
 }
 
