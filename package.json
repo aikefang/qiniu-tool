@@ -1,8 +1,8 @@
 {
-  "_from": "sy-fe-mock@1.1.0",
-  "_id": "sy-fe-mock@1.1.0",
+  "_from": "qiniu-tool@1.1.2",
+  "_id": "qiniu-tool@1.1.2",
   "name": "qiniu-tool",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "七牛工具Npm封装版",
   "main": "index.js",
   "author": {

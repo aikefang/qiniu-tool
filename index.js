@@ -34,10 +34,6 @@ class QiniuTool {
     }
     console.log(`[CDN refresh End] 刷新成功 共${i}个文件刷新成功`)
   }
-
-  async uploadOnly() {
-
-  }
 }
 
 let qiniuTool = new QiniuTool()
