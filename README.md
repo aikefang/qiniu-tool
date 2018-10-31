@@ -43,10 +43,11 @@ qiniuTool.config({
   */
   zone: 'Zone_z1', // 七牛空间（默认Zone_z1）
   pathCDN: 'test/', // 上传到CDN的路径
-  pathLocal: '/Users/kyle/filesDir/demo.js', // 上传到CDN的路径
+  pathLocal: '/Users/kyle/filesDir/demo.js', // 源文件路径
+  onlyPath: 'demo/dd.js',
   root: '/Users/kyle/filesDir/'
 })
-qiniuTool.uploadOnly() // [CDN Path]/test/demo.js
+qiniuTool.uploadOnly() // /Users/kyle/filesDir/demo.js => [CDN Path]/test/demo/dd.js
 ```
 ### 刷新资源
 ```javascript
@@ -102,14 +103,15 @@ qiniuTool.refresh([
 若比填写则上传至CDN根目录，例如上传了文件‘demo.js’,上传后的路径是：http://cdn.xxx.com/demo.js
 若填写http://cdn.xxx.com/[pathCDN]/demo.js
 ```
-#### `root {String} `
+#### `onlyPath {String} `
 ```
 单文件上传（uploadOnly）-必填
 当前当前环境根路径（填写的此路径会将pathLocal的此部分路径删除）
 例如：
 pathLocal: '/Users/kyle/filesDir/demo.js', // 上传到CDN的路径
-root: '/Users/kyle/filesDir/'
-上传后得到：[CDN Path]/test/demo.js
+pathCDN: 'test/', // 上传到CDN的路径
+onlyPath: 'demo/dd.js',
+上传后得到：[CDN Path]/test/demo/dd.js
 ```
 #### `pathLocal {String} `
 ```

@@ -29,7 +29,7 @@ class UploadFn {
     let formUploader = new qiniu.form_up.FormUploader(upload.configObj)
     let putExtra = new qiniu.form_up.PutExtra()
     // 开头不能为/
-    let key = `${join(qiniuConfig.pathCDN, qiniuConfig.pathLocal.replace(qiniuConfig.root, ''))}`
+    let key = `${join(qiniuConfig.pathCDN, qiniuConfig.onlyPath || new Date().getTime())}`
     let options = {
       scope: `${qiniuConfig.scope}:${key}`
     }
