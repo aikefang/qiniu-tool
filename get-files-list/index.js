@@ -110,7 +110,8 @@ class GetFilesList {
     } else {
       timeStamp = await childAssembly.getTimeStamp()
     }
-    let dir = getFilesList.option.pathLocal
+    let dir = path.resolve(getFilesList.option.pathLocal)
+    // 判断是相对路径还是绝对路径
     let arr = []
     await childAssembly.getList({
       dir, cb(filePath) {
@@ -119,13 +120,14 @@ class GetFilesList {
         // 相对路径
         let relativePath = ''
         if (getFilesList.random) {
-          relativePath = `${getFilesList.pathCDN}${timeStamp}/${fileOriginPath.replace(dir + '/', '')}`
+          relativePath = path.join(getFilesList.pathCDN, timeStamp, fileOriginPath.replace(dir, ''))
         } else {
-          relativePath = `${getFilesList.pathCDN}${fileOriginPath.replace(dir + '/', '')}`
+          relativePath = path.join(getFilesList.pathCDN, fileOriginPath.replace(dir, ''))
         }
         arr.push({fileOriginPath, relativePath})
       }
     })
+    // console.log(arr)
     return arr
   }
 }

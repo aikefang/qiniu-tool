@@ -21,7 +21,7 @@ qiniuTool.config({
   zone: 'Zone_z1', // 七牛空间（默认Zone_z1）
   type: '.css|.js', // 允许上传的文件类型（详情请查看下文文档）
   pathCDN: 'test/', // 上传到CDN的路径
-  pathLocal: '/Users/kyle/filesDir/', // 上传到CDN的路径
+  pathLocal: '/Users/kyle/filesDir/', // 源文件夹路径(相对路径和绝对路径都行)
   random: false, // 是否产生随机数
   randomNumber: '66666', //随机数，默认自动生成，有randomNumber则不自动生成random
 })
@@ -43,9 +43,8 @@ qiniuTool.config({
   */
   zone: 'Zone_z1', // 七牛空间（默认Zone_z1）
   pathCDN: 'test/', // 上传到CDN的路径
-  pathLocal: '/Users/kyle/filesDir/demo.js', // 源文件路径
-  onlyPath: 'demo/dd.js',
-  root: '/Users/kyle/filesDir/'
+  pathLocal: '/Users/kyle/filesDir/demo.js', // 源文件路径（相对路径和绝对路径都行）
+  onlyPath: 'demo/dd.js'
 })
 qiniuTool.uploadOnly() // /Users/kyle/filesDir/demo.js => [CDN Path]/test/demo/dd.js
 ```
