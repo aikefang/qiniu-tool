@@ -21,9 +21,9 @@ class QiniuTool {
     return await uploadOnlyFn.upload()
   }
 
-  async fetch(url) {
+  async fetch(url, path) {
     await fetch.config(qiniuTool.option)
-    return await fetch.run(url)
+    return await fetch.run(url, path)
   }
 
   async refresh(list) {
