@@ -2,6 +2,7 @@ let getFileList = require('./get-files-list/index')
 let uploadFn = require('./upload/index')
 let uploadOnlyFn = require('./upload-only/index')
 let refreshFn = require('./refresh/index')
+let fetch = require('./fetch/index')
 
 class QiniuTool {
   async config(option) {
@@ -18,6 +19,11 @@ class QiniuTool {
   async uploadOnly() {
     await uploadOnlyFn.config(qiniuTool.option)
     return await uploadOnlyFn.upload()
+  }
+
+  async fetch(url) {
+    await fetch.config(qiniuTool.option)
+    return await fetch.run(url)
   }
 
   async refresh(list) {

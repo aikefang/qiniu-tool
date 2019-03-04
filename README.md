@@ -60,6 +60,35 @@ qiniuTool.refresh([
   'https://static.webascii.cn/test/0011220033/dir/dir2/f06.css',
 ])
 ```
+### 拉取网络资源(v1.2.0新增)
+```javascript
+let qiniuTool = require('qiniu-tool')
+qiniuTool.config({
+  ak: '', // 七牛AccessKey
+  sk: '', // 七牛SecretKey
+  scope: '', // 七牛存储空间名称
+  /**
+   * 机房	Zone对象
+   * 华东	qiniu.zone.Zone_z0
+   * 华北	qiniu.zone.Zone_z1
+   * 华南	qiniu.zone.Zone_z2
+   * 北美	qiniu.zone.Zone_na0
+   */
+  zone: 'Zone_z1', // 七牛空间（默认Zone_z1）
+  pathCDN: 'test/demo/' //上传文件路径（开头请不要添加/）
+})
+async function demo() {
+  let obj = await qiniuTool.fetch('http://devtools.qiniu.com/qiniu.png', 'kyle/qiniu.png')
+  console.log(obj)
+}
+demo()
+// log输出
+// { fsize: 163469,
+//   hash: 'FpHyF0kkil3sp-SaXXX8TBJY3jDh',
+//   key: 'test/demo/kyle/qiniu.png',
+//   mimeType: 'image/png',
+//   originUrl: 'http://devtools.qiniu.com/qiniu.png' }
+```
 ## 版本 v1.1.* 参数详解
 #### `ak {String} `
 ```
