@@ -30,8 +30,18 @@ class UploadFn {
     let putExtra = new qiniu.form_up.PutExtra()
     // 开头不能为/
     let key = `${join(qiniuConfig.pathCDN, qiniuConfig.onlyPath || new Date().getTime())}`
+    const body = {
+      "key": "$(key)",
+      "hash": "$(etag)",
+      "fsize": "$(fsize)",
+      "w": "$(imageInfo.width)",
+      "h": "$(imageInfo.height)",
+      "type": "$(mimeType)",
+      "format": "$(imageInfo.format)",
+    }
     let options = {
-      scope: `${qiniuConfig.scope}:${key}`
+      scope: `${qiniuConfig.scope}:${key}`,
+      returnBody: JSON.stringify(body)
     }
     let putPolicy = new qiniu.rs.PutPolicy(options)
     let uploadToken = putPolicy.uploadToken(upload.mac)
