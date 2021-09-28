@@ -26,7 +26,7 @@ class FetchFn {
   async run(url, path) {
     let bucketManager = new qiniu.rs.BucketManager(fetch.mac, fetch.configObj)
     // let key = join(qiniuConfig.pathCDN, path)
-    let key = qiniuConfig.pathCDN + '/' + path
+    let key = qiniuConfig.pathCDN + path
     return new Promise((resolve, reject) => {
       bucketManager.fetch(url, qiniuConfig.scope, key, (err, respBody, respInfo) => {
         if (err) {
