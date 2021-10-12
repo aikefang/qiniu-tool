@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5", // 编译目标代码为 es5 的，为了兼容更多的浏览器
+    "module": "commonjs", // 使用 cjs 模块解析机制
+    "declaration": true, // 当打包时，生成类型定义文件
+    "outDir": "./dist", // 打包的地址为 ./lib
+    "strict": true,
+    "types": ["node"]
+  },
+  "include": ["lib"],
+  "exclude": ["node_modules"] // 不编译 node_modules 和 「tests」 文件夹，因为他们只在开发时使用
+}
