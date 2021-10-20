@@ -24,13 +24,18 @@ const result01 = await upload({
 }, '/Users/kyle/zhuangkai/qiniu-tool/test.png', 'test/2020-10-12/demo.png')
 // 刷新资源
 const result02 = await refresh({
-  ak,
-  sk
+  ak: '',
+  sk: ''
 }, [
   'https://static.domain.com/demo01.png',
   'https://static.domain.com/demo01.png'
 ])
-
+// 拉取网络资源
+const result03 = await fetch({
+  ak: '',
+  sk: '',
+  scope: '',
+}, 'https://img2.domain.com/3ae0df90_400.png', 'test/tsUpload/aa2.png')
 ```
 
 ## 使用方法（仅限V1.*版本，1.*所有版本将于2022/01/01起全部停止维护）
