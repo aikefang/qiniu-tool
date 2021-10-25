@@ -11,7 +11,7 @@ yarn add qiniu-tool
 npm run test
 ```
 
-## 使用方法（仅限V2.0.0版本）
+## 使用方法（仅限V2.*版本）
 
 ```typescript
 const {fetch, refresh, upload} = require('qiniu-tool')
