@@ -15,7 +15,12 @@ npm run test
 
 ```typescript
 const {fetch, refresh, upload} = require('qiniu-tool')
-// 上传资源
+/**
+ * 上传资源
+ * 第一参数: 七牛配置参数
+ * 第二参数: file path/buffer/base64
+ * 第三参数: 上传后的CDN路径
+ */
 const result01 = await upload({
   ak: '',
   sk: '',

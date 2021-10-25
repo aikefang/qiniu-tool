@@ -7,6 +7,6 @@
     "strict": true,
     "types": ["node"]
   },
-  "include": ["lib"],
+  "include": ["src"],
   "exclude": ["node_modules"] // 不编译 node_modules 和 「tests」 文件夹，因为他们只在开发时使用
 }

@@ -1,7 +1,7 @@
 'use strict'
 const expect = require('chai').expect
-const add = require('../dist/index').add
-const { fetch, refresh, upload } = require('../dist/index')
+const add = require('qiniu-tool').add
+const { fetch, refresh, upload } = require('qiniu-tool')
 const path = require('path')
 
 const ak = ''
