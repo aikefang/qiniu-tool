@@ -1,7 +1,5 @@
 const qiniu = require('qiniu')
-const path = require('path')
 const fs = require('fs')
-const mineType = require('mime-types')
 import {Duplex} from 'stream';
 import {AkSk, Key, Scope, Zone} from "../interface"
 
